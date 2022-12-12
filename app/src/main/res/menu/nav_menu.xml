@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_transaction"
+        android:icon="@drawable/ic_baseline_edit_note_24"
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/ic_static"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/ic_account"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title=""
+        />
+</menu>

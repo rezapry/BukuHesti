@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.StatisticFragment"
+    android:background="@color/white">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/upper"
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:background="@color/orangePrimary">
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/allTimeTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:gravity="start"
+                        android:text="Semua Waktu Transaksi"
+                        android:textColor="#020202"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/allTimeCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/allTimeTitle"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#DDDDDD"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="15dp">
+
+                            <TextView
+                                android:id="@+id/netAmountTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:text="Total Jumlah Saat Ini"
+                                android:textColor="#979797"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/netAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/netAmountTitle"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:text="0.00"
+                                android:textColor="#333333"
+                                android:textSize="22sp" />
+
+                            <ImageView
+                                android:id="@+id/line"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/netAmount"
+                                android:background="#DDDDDD" />
+
+                            <LinearLayout
+                                android:id="@+id/linearAmountTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/line"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppinsmedium"
+                                    android:text="Pengeluaran"
+                                    android:textColor="#979797"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppinsmedium"
+                                    android:text="Pemasukan"
+                                    android:textColor="#979797"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/linearAmountTitle"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/expenseAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppinsmedium"
+                                    android:text="0.00"
+                                    android:textColor="@color/redExpense"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/incomeAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppinsmedium"
+                                    android:text="0.00"
+                                    android:textColor="@color/greenIncome"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/chartTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/allTimeCard"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:gravity="start"
+                        android:text="Laporan Statistik"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/chartCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chartTitle"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="100dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#DDDDDD"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:backgroundTint="@color/greenIncome"
+                                android:drawableLeft="@drawable/calendar"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:insetTop="1dp"
+                                android:insetBottom="0dp"
+                                android:paddingRight="40dp"
+                                android:text="Pilih Tanggal"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:cornerRadius="20dp"
+                                app:elevation="0dp" />
+
+                            <TextView
+                                android:id="@+id/netAmountRangeTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/buttonDate"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:text="Total Keseluruhan"
+                                android:textColor="#979797"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/netAmountRange"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/netAmountRangeTitle"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:text="0.00"
+                                android:textColor="#333333"
+                                android:textSize="22sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/chartMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/netAmountRange"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="25dp"
+                                android:backgroundTint="#12000000"
+                                app:cardCornerRadius="7dp"
+                                app:cardElevation="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <RadioGroup
+                                        android:id="@+id/RadioGroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="28dp"
+                                        android:layout_margin="2dp"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/rbBarChart"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/chart_selector"
+                                            android:button="@drawable/null_radio_button"
+                                            android:checked="true"
+                                            android:gravity="center"
+                                            android:text="Jumlah"
+                                            android:textColor="@drawable/chart_text_selector" />
+
+                                        <RadioButton
+                                            android:id="@+id/rbPieChart"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/chart_selector"
+                                            android:button="@drawable/null_radio_button"
+                                            android:gravity="center"
+                                            android:text="Rasio"
+                                            android:textColor="@drawable/chart_text_selector" />
+
+                                    </RadioGroup>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/barChart"
+                                android:layout_width="match_parent"
+                                android:layout_height="260dp"
+                                android:layout_below="@id/chartMenu"
+                                android:layout_marginBottom="20dp"
+                                android:visibility="visible" />
+
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/pieChart"
+                                android:layout_width="match_parent"
+                                android:layout_height="260dp"
+                                android:layout_below="@+id/chartMenu"
+                                android:layout_marginBottom="20dp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+</RelativeLayout>

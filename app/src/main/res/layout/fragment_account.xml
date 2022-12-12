@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AccountFragment"
+    android:background="@color/white">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/upperLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="168dp"
+                    android:background="@color/greenIncome">
+
+                    <Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/btnLogout"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/ic_baseline_logout_24" />
+
+                    </Toolbar>
+
+                    <LinearLayout
+                        android:id="@+id/accountInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/toolbar"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/picture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/ic_baseline_circle_24"
+                            android:fontFamily="@font/poppinsbold"
+                            android:gravity="center"
+                            android:paddingTop="7dp"
+                            android:text="F"
+                            android:textColor="@color/orangePrimary"
+                            android:textSize="40sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp">
+
+                            <TextView
+                                android:id="@+id/tvName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-3dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:gravity="start"
+                                android:text="Nama Akun"
+                                android:textColor="#FBFBFB"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvName"
+                                android:layout_marginTop="-5dp"
+                                android:layout_marginBottom="13dp"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:gravity="start"
+                                android:text="Account@email.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/verified"
+                                android:layout_width="126dp"
+                                android:layout_height="22dp"
+                                android:layout_below="@id/tvEmail"
+                                android:layout_marginTop="-7dp"
+                                android:backgroundTint="@color/white"
+                                android:visibility="invisible"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableLeft="@drawable/ic_verified_svgrepo_com"
+                                    android:drawablePadding="7dp"
+                                    android:gravity="center"
+                                    android:text="Akun Valid"
+                                    android:textColor="#2ec4b6"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/notVerified"
+                                android:layout_width="100dp"
+                                android:layout_height="22dp"
+                                android:layout_below="@id/tvEmail"
+                                android:layout_marginTop="-7dp"
+                                android:backgroundTint="@color/white"
+                                android:visibility="visible"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableLeft="@drawable/ic_not_verified_svgrepo_com"
+                                    android:drawablePadding="7dp"
+                                    android:gravity="center"
+                                    android:text="Belum Valid"
+                                    android:textColor="#B8B8B8"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/upperLayout">
+
+                    <TextView
+                        android:id="@+id/allTimeTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:gravity="start"
+                        android:text="Pengaturan"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/allTimeTitle"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#DDDDDD"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="15dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonexport"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="20dp"
+                                android:backgroundTint="@color/ic_launcher_background"
+                                android:drawableLeft="@drawable/export"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:insetTop="1dp"
+                                android:insetBottom="0dp"
+                                android:text="Export Data"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:elevation="0dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonhelp"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/buttonexport"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="20dp"
+                                android:backgroundTint="@color/ic_launcher_background"
+                                android:drawableLeft="@drawable/cs"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:insetTop="1dp"
+                                android:insetBottom="0dp"
+                                android:text="Bantuan"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:elevation="0dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttoninfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/buttonhelp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="20dp"
+                                android:backgroundTint="@color/ic_launcher_background"
+                                android:drawableLeft="@drawable/info"
+                                android:fontFamily="@font/poppinsmedium"
+                                android:insetTop="1dp"
+                                android:insetBottom="0dp"
+                                android:text="Info"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:elevation="0dp" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+</RelativeLayout>
